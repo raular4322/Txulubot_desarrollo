@@ -1,4 +1,4 @@
-# MultiBot
+# Txulubot
 
 Este bot está destinado a su uso en el canal de Discord de Lynx Reviewer, sin embargo, tiene funciones que pueden ser utiles en cualquier servidor, pero no se asegura su funcionamiento ya que al cambiar los nombres de los canales de texto el bot no reconocerá en su estado actual la mayoria de comandos.
 
