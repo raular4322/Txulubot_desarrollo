@@ -2,7 +2,10 @@ const fs = require('fs');
 const strings = require('./strings');
 
 const log = 'log.txt';
+
 const toConsole = strings.console;
+const roleName = strings.roles;
+const botResponses = strings.responses;
 
 // Records usefull data from each function
 function recordLog(data) {
@@ -29,38 +32,66 @@ function sendDM(receiver, message, origin) {
 
 // Sends a welcome message to the new user
 function sendWelcomeMessage(receiver) {
-  sendDM(receiver, strings.responses.newMember, strings.origin.welcome);
+  sendDM(receiver, botResponses.newMember, strings.origin.welcome);
 }
 
 // Sends a message to a channel
-function sendMessageToChannel(channel, message) {
-  const sendMessageToChannelLog = `${toConsole.messageToChannel} ${channel.name}`;
+function sendMessageToChannel(channel, message, origin) {
+  const sendMessageToChannelLog = `${toConsole.messageToChannel} ${channel.name} ${origin}`;
   channel.send(message)
     .then(recordLog(sendMessageToChannelLog))
     .catch(error => recordLog(error));
 }
 
 // Reply to a message
-function sendReply(msg, response, origin) {
-  const toAuthor = `${toConsole.replyUser} ${msg.author.tag}`;
-  const toChannel = `${toConsole.replyChannel} ${msg.channel.name}`;
+function sendReply(message, response, origin) {
+  const toAuthor = `${toConsole.replyUser} ${message.author.tag}`;
+  const toChannel = `${toConsole.replyChannel} ${message.channel.name}`;
   const sendReplyLog = `${toAuthor} ${toChannel} ${origin}`;
-  msg.reply(response)
+  message.reply(response)
     .then(recordLog(sendReplyLog))
     .catch(error => recordLog(error));
 }
 
 // Checks if the author has the default avatar and, if its the case, warns him
-function hasTheAuthorTheDefaultAvatar(msg) {
-  if (msg.author.displayAvatarURL === msg.author.defaultAvatarURL) {
-    sendReply(msg, strings.responses.defaultAvatar, strings.origin.defaultAvatar);
+function hasTheAuthorTheDefaultAvatar(message) {
+  if (message.author.displayAvatarURL === message.author.defaultAvatarURL) {
+    sendReply(message, botResponses.defaultAvatar, strings.origin.defaultAvatar);
+  }
+}
+
+// Checks if the user is a moderator
+function authorIsMod(message) {
+  const msgMember = message.member;
+  if (msgMember.roles != null && msgMember.roles.has(roleName.moderator2 || roleName.moderator1)) {
+    return true;
+  }
+  return false;
+}
+
+// Splits a command message into parameters
+function splitMessageToParameters(message) {
+  return message.content.split(' ').filter(content => content !== '');
+}
+
+// Gets X number of messages from a channel to erase them
+function clearMessages(message) {
+  if (authorIsMod()) {
+    const parameters = splitMessageToParameters(message);
+    if (parameters.length < 2 || typeof parameters[1] === 'number' || parameters[1] > 100 || parameters[1] < 0) {
+      sendMessageToChannel(message.channel, botResponses.clearWrongRange, strings.origin.clear);
+    } else {
+      message.channel.fetchMessages({ limit: parameters[1] }).then((messages) => {
+        console.log(`${messages} WIP FUNCTION`);
+      });
+    }
   }
 }
 
 // Checks if the message is a command
 function isTheMessageACommand(message) {
   if (message.content.startsWith('!clear')) {
-    console.log('clear');
+    clearMessages(message);
   }
   if (message.content.toLowerCase().startsWith('!patrulla')) {
     console.log('patrulla');
@@ -76,11 +107,6 @@ function isTheMessageACommand(message) {
   }
 }
 
-// Deletes X number of messages from a channel
-function clearMessages() {
-
-}
-
 
 module.exports = {
   recordLog,
@@ -91,5 +117,7 @@ module.exports = {
   hasTheAuthorTheDefaultAvatar,
   sendReply,
   isTheMessageACommand,
+  splitMessageToParameters,
   clearMessages,
+  authorIsMod,
 };

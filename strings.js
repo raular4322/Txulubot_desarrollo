@@ -47,6 +47,34 @@ const channelFuntion = {
   voiceChannel8: 'Sala-de-oro-2.0',
 };
 
+const roles = {
+  everyone: '@everyone',
+  admin: 'Admin',
+  moderator1: 'Moderator',
+  moderator2: 'Guardián de sal',
+  helper: 'Los Randals',
+  botRol1: 'Bot de Discordia',
+  botRol2: 'Los bots que tenemos',
+  warningRoleHard: 'Sordo, ciego, mudo',
+  warningRoleSoft: 'Con el ojo encima',
+  colaborator: 'Colaborador',
+  twitchSubscriber: 'Twitch Subscriber',
+  patron: 'Mecenas',
+  patronVip: 'Socio Capitalista',
+  rolPlayerVip: 'En Cola',
+  rolMaster: 'Máster',
+  jokeRol1: 'Lector del necronomicón',
+  jokeRol2: 'Creador de imágenes',
+  jokeRol3: 'Arquitecto de discordia',
+  jokeRol4: 'Adalid de almas rotas',
+  jokeRol5: 'Tripulantes del Arca',
+  jokeRol6: 'Er dealer',
+  jokeRol7: 'Primigenia del martillo',
+  addedBotRol: 'UB3R-B0T',
+  unkownFuction1: 'Bot Admin',
+  unkownFuction2: 'Bot Mod',
+};
+
 const commands = {
   clear: '!clear',
   warningRole: '!patrulla',
@@ -56,6 +84,7 @@ const commands = {
 const responses = {
   newMember: 'Bienvenido al servidor de Lynx Reviewer, aprovecha estos 10 minutos que tienes para leer el canal de leyes_y_normas, porque encontrarás información crucial para tu experiencia en el server. Dicho esto, ¡Gracias por venir y esperamos que te lo pases genial con nosotros!',
   defaultAvatar: 'Lee las normas',
+  clearWrongRange: 'Especifica un numero mayor a 0 y menor a 100',
 };
 
 const console = {
@@ -70,10 +99,12 @@ const console = {
 const origin = {
   defaultAvatar: '-Default avatar',
   welcome: '-Welcome message',
+  clear: '-Clear message',
 };
 
 module.exports = {
   channelFuntion,
+  roles,
   commands,
   responses,
   console,
