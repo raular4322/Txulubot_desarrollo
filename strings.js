@@ -1,4 +1,4 @@
-const channelFuntion = {
+const channelFunction = {
   serverName: 'Lynx Reviewer',
   rulesChannel: 'leyes_y_normas',
   moderationChannel: 'asientos_de_arena',
@@ -84,7 +84,9 @@ const commands = {
 const responses = {
   newMember: 'Bienvenido al servidor de Lynx Reviewer, aprovecha estos 10 minutos que tienes para leer el canal de leyes_y_normas, porque encontrarás información crucial para tu experiencia en el server. Dicho esto, ¡Gracias por venir y esperamos que te lo pases genial con nosotros!',
   defaultAvatar: 'Lee las normas',
-  clearWrongRange: 'Especifica un numero mayor a 0 y menor a 100',
+  clearRange: 'Especifica un numero entero mayor a 0 y menor a 100',
+  userListHeader: '```-Lista de usuarios según su entrada al server-\n',
+  userListTail: '```',
 };
 
 const console = {
@@ -92,21 +94,27 @@ const console = {
   newMember: 'Welcome message send to',
   dmMessage: 'Direct message send to',
   messageToChannel: 'Message to',
-  replyUser: 'Reply to',
+  userToReply: 'Reply to',
   replyChannel: 'Reply in',
 };
 
 const origin = {
-  defaultAvatar: '-Default avatar',
-  welcome: '-Welcome message',
-  clear: '-Clear message',
+  defaultAvatar: '- Default avatar',
+  welcome: '- Welcome message',
+  clear: '- Clear message',
+  firstUsers: '- First members',
+};
+
+const values = {
+  userListMax: 51,
 };
 
 module.exports = {
-  channelFuntion,
+  channelFunction,
   roles,
   commands,
   responses,
   console,
   origin,
+  values,
 };

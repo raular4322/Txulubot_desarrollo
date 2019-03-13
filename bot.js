@@ -15,7 +15,9 @@ client.on('ready', () => {
 client.on('message', (msg) => {
   functions.hasTheAuthorTheDefaultAvatar(msg);
 
-  if (msg.channel.name === strings.channelFuntion.rolMastersChannel) {
+  functions.isTheMessageACommand(msg);
+
+  if (msg.channel.name === strings.channelFunction.rolMastersChannel) {
     if (!msg.content.startsWith('//Inicio') || !msg.content.endsWith('Final//')) {
       msg.delete().catch(console.error(`Borrar mensaje en ${msg.channel.name}`));
       msg.guild.channels
@@ -60,23 +62,6 @@ client.on('message', (msg) => {
     }
   }
 
-  if (msg.content.toLowerCase() === '!theelders') {
-    msg.delete().catch(console.error(`Borrar mensaje en ${msg.channel.name}`));
-    let listaDeUsuarios = '```-Lista de usuarios según su entrada al server-\n';
-    client.guilds.find(a => a.name === 'Lynx Reviewer').fetchMembers().then((server) => {
-      const guildList = server.members.array()
-        .sort((user1, user2) => user1.joinedTimestamp - user2.joinedTimestamp);
-      for (let i = 0; i < 52 && i < guildList.length; i += 1) {
-        if (i < 10) {
-          listaDeUsuarios += ' ';
-        }
-        listaDeUsuarios += `${i} - ${guildList[i].user.tag}`;
-      }
-      listaDeUsuarios += '```';
-      msg.author.send(listaDeUsuarios).catch(console.error(`mensaje a ${msg.author.tag} (lista de primeros 52 miembros)`));
-    });
-  }
-
   if (msg.content.toLowerCase().startsWith('!patrulla')) {
     if (msg.member.roles != null && msg.member.roles.has('401447862715678730')) {
       const mensaje = msg.content.split(' ').filter(entrada => entrada !== '');
@@ -89,20 +74,6 @@ client.on('message', (msg) => {
       } else {
         persona.addRole(msg.guild.roles.find(rol => rol.name === 'Con el ojo encima')).catch(console.error(`${msg.author.tag} patrulla a ${persona.user.tag}`));
         msg.channel.send(`${persona} ha sido patrullado por ${msg.author} ${mensaje[posDias - 1]} dias`).catch(console.error(`mensaje de patrulla a ${msg.channel.name}`));
-      }
-    }
-  }
-
-  if (msg.content.startsWith('!clear')) {
-    if (msg.member.roles != null && msg.member.roles.has('401447862715678730')) {
-      const mensaje = msg.content.split(' ').filter(entrada => entrada !== '');
-      if (mensaje.length <= 1 || typeof mensaje[1] === 'number' || mensaje[1] > 100 || mensaje[1] < 0) {
-        msg.channel.send('especifica un numero mayor a 0 y menor a 100').catch(console.error(`mensaje de error de clear (numero de mensajes) a ${msg.channel.name}`));
-      } else {
-        msg.delete().catch(console.error(`Borrar mensaje en ${msg.channel.name}`));
-        msg.channel.fetchMessages({ limit: mensaje[1] }).then((mensajes) => {
-          mensajes.deleteAll().catch(console.error(strings.botResponse.eraseMessage));
-        });
       }
     }
   }
