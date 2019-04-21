@@ -16,7 +16,6 @@ function recordLog(data) {
   const date = new Date();
   fs.appendFile(logTXT, `${date}: ${data} \n`, (err) => {
     if (err) throw err;
-    console.log('The log has been saved!');
   });
 }
 
@@ -64,11 +63,17 @@ function authorIsMod(message) {
   return authorRoles.find(role => role.name === roleName.moderator2) != null;
 }
 
-// checks that the parameters from clearMessages are correct
+// Checks that the parameters from clearMessages are correct
 function clearWrongRange(parameters) {
   return parameters.length < 2
   || parameters[1] >= 100
   || parameters[1] <= 0;
+}
+
+// Checks if the bot can send a message to the channel
+function noChatChannel(message) {
+  return message.channel.name === strings.channelFunction.rolAnnouncements
+  || message.channel.name === strings.channelFunction.rolMastersChannel;
 }
 
 
@@ -88,7 +93,10 @@ function sendWelcomeMessage(receiver) {
 
 // Checks if the author has the default avatar and, if its the case, warns him
 function hasTheAuthorTheDefaultAvatar(message) {
-  if (message.author.displayAvatarURL === message.author.defaultAvatarURL) {
+  if (
+    message.author.displayAvatarURL === message.author.defaultAvatarURL
+    && !noChatChannel(message)
+  ) {
     sendReply(message, botResponse.defaultAvatar, strOrigin.defaultAvatar);
   }
 }
@@ -123,6 +131,21 @@ function firstUsers(message) {
   });
 }
 
+// Sends the number of users without avatar
+function usersWithoutAvatar(message) {
+  if (authorIsMod(message)) {
+    message.guild.fetchMembers().then((guild) => {
+      let counter = 0;
+      guild.members.array().forEach((member) => {
+        if (member.user.displayAvatarURL === member.user.defaultAvatarURL) {
+          counter += 1;
+        }
+      });
+      sendDM(message.member, counter, strOrigin.noAvatarUsers);
+    });
+  }
+}
+
 
 // Level 4 functions,
 
@@ -140,6 +163,9 @@ function isTheMessageACommand(message) {
   }
   if (message.channel.name === 'anuncios_de_partidas') {
     console.log('anuncios');
+  }
+  if (message.content.toLowerCase().startsWith('!noavatar')) {
+    usersWithoutAvatar(message);
   }
   if (message.channel.name === strings.channelFunction.rolMastersChannel) {
     console.log('master');
@@ -161,5 +187,6 @@ module.exports = {
   hasTheAuthorTheDefaultAvatar, // 3
   clearMessages, // 3
   firstUsers, // 3
+  usersWithoutAvatar, // 3
   isTheMessageACommand,
 };

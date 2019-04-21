@@ -103,6 +103,7 @@ const origin = {
   welcome: '- Welcome message',
   clear: '- Clear message',
   firstUsers: '- First members',
+  noAvatarUsers: '- Number of members without avatar',
 };
 
 const values = {
