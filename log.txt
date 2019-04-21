@@ -411,3 +411,7 @@ Sun Apr 21 2019 21:01:44 GMT+0200 (GMT+02:00): Logged as Txulubot#4769
 Sun Apr 21 2019 21:01:56 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
 Sun Apr 21 2019 21:02:16 GMT+0200 (GMT+02:00): Direct message send to raular4322#2690 - Number of members without avatar 
 Sun Apr 21 2019 21:03:00 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun Apr 21 2019 21:06:12 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun Apr 21 2019 22:53:07 GMT+0200 (GMT+02:00): Direct message send to KEST#1985 - Welcome message 
+Sun Apr 21 2019 23:55:52 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Mon Apr 22 2019 00:05:20 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
