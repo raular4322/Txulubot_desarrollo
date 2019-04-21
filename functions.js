@@ -14,6 +14,7 @@ const value = strings.values;
 // Records usefull data from each function
 function recordLog(data) {
   const date = new Date();
+  console.log(`${date}: ${data} \n`);
   fs.appendFile(logTXT, `${date}: ${data} \n`, (err) => {
     if (err) throw err;
   });
