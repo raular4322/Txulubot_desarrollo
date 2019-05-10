@@ -197,7 +197,12 @@ function registerWarning(message) {
     const indexDays = parameters.indexOf(strValue.warningDays);
     const indexCause = parameters.indexOf(strValue.warningCause);
     const indexChannel = parameters.indexOf(strValue.warningChannel);
-
+    const messageToMods = `${member.user.tag} ${strResponse.warningMessage} ${parameters[indexCause + 1]}`;
+    sendMessageToChannel(
+      findChannel(strFunction.moderationChannel),
+      messageToMods,
+      strOrigin.warning,
+    );
     console.log(`${moderator.tag}`);
     console.log(`${member.user.tag}`);
     console.log(`${parameters[indexDays - 1]}`);
@@ -215,9 +220,10 @@ function isTheMessageACommand(message) {
   if (message.content.toLowerCase().startsWith('!clear')) {
     clearMessages(message);
   }
-  if (message.content.toLowerCase().startsWith('!patrulla')) {
-    registerWarning(message);
-  }
+  // Function in progress
+  // if (message.content.toLowerCase().startsWith('!patrulla')) {
+  // registerWarning(message);
+  // }
   if (message.content.toLowerCase().startsWith('!theelders')) {
     firstUsers(message);
   }
