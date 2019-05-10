@@ -87,6 +87,9 @@ const responses = {
   clearRange: 'Especifica un numero entero mayor a 0 y menor a 100',
   userListHeader: '```-Lista de usuarios según su entrada al server-\n',
   userListTail: '```',
+  wrongTemplate: 'La plantilla que tienes que usar está en los mensajes fijados (consulta el canal de normas si no sabes que son) y en los mensajes directos (si los tienes abiertos)',
+  rolMasterTemplate: 'La tabla que tienes que rellenar para presentarte como master es esta:\n//Inicio\nTiempo jugando rol:\nTiempo dirigiendo rol en físico:\nTiempo dirigiendo rol online:\nSistemas dirigidos con frecuencia:\nSistemas jugados con frecuencia:\nFinal//',
+  rolAnnounceTemplate: 'La tabla que tienes que rellenar para presentar una partida es esta:\n//Inicio\n***[Nombre Partida]***\n\n**Sistema:** [Juego]\n**Master:** [@tag del master]\n**Rating:** [X/X/X] [Lenguaje/Violencia/Sexual] (del 0 al 3 siendo 0 nada y 3 explícito)\n**Día:** [DD/MM/YY]\n**Hora:** [Hora] [GMT] [País]\n**Premisa:** [Premisa]\n**Jugadores: ** [X/Y] (siendo X las plazas ocupadas e Y las totales)\n\n*imágenes opcionales*\n[Imagen partida vertical]\n[Imagen fondo horizontal]\nFinal//\nlos //Inicio y Final// **son necesarios**, y actualizar el numero de **Jugadores** tambien',
 };
 
 const console = {
@@ -96,6 +99,7 @@ const console = {
   messageToChannel: 'Message to',
   userToReply: 'Reply to',
   replyChannel: 'Reply in',
+  eraseMessage: 'The bot erase',
 };
 
 const origin = {
@@ -104,10 +108,19 @@ const origin = {
   clear: '- Clear message',
   firstUsers: '- First members',
   noAvatarUsers: '- Number of members without avatar',
+  wrongTemplate: '- wrong or no template',
 };
 
 const values = {
   userListMax: 51,
+  warningDays: 'dias',
+  warningChannel: 'en',
+  warningCause: 'por',
+};
+
+const templates = {
+  startTemplate: '//Inicio',
+  endTemplate: 'Final//',
 };
 
 module.exports = {
@@ -118,4 +131,5 @@ module.exports = {
   console,
   origin,
   values,
+  templates,
 };

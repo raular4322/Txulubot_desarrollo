@@ -2,11 +2,13 @@ const fs = require('fs');
 const strings = require('./strings');
 
 const logTXT = 'log.txt';
-const log = strings.console;
-const roleName = strings.roles;
-const botResponse = strings.responses;
+const strConsole = strings.console;
+const strRole = strings.roles;
+const strResponse = strings.responses;
 const strOrigin = strings.origin;
-const value = strings.values;
+const strValue = strings.values;
+const strFunction = strings.channelFunction;
+const strTemplate = strings.templates;
 
 // Level 1 functions, they are the base of all commands
 
@@ -23,30 +25,36 @@ function recordLog(data) {
 // Sends a direct message to a user
 function sendDM(receiver, message, origin) {
   receiver.send(message)
-    .then(recordLog(`${log.dmMessage} ${receiver.user.tag} ${origin}`))
+    .then(recordLog(`${strConsole.dmMessage} ${receiver.tag} ${origin}`))
     .catch(error => recordLog(error));
 }
 
 // Sends a message to a channel
 function sendMessageToChannel(channel, message, origin) {
   channel.send(message)
-    .then(recordLog(`${log.messageToChannel} ${channel.name} ${origin}`))
+    .then(recordLog(`${strConsole.messageToChannel} ${channel.name} ${origin}`))
     .catch(error => recordLog(error));
 }
 
 // Reply to a message
-function sendReply(originalMessage, response, origin) {
-  const toUser = `${log.userToReply} ${originalMessage.author.tag}`;
-  const toChannel = `${log.replyChannel} ${originalMessage.channel.name}`;
-  originalMessage.reply(response)
+function sendReply(message, response, origin) {
+  const toUser = `${strConsole.userToReply} ${message.author.tag}`;
+  const toChannel = `${strConsole.replyChannel} ${message.channel.name}`;
+  message.reply(response)
     .then(recordLog(`${toUser} ${toChannel} ${origin}`))
     .catch(error => recordLog(error));
 }
 
 // Erases the messages
-function eraseMessage(order, messageToErrase, origin) {
+function eraseMessages(order, messageToErrase, origin) {
   messageToErrase.deleteAll();
   recordLog(`${order} by ${order.author.tag} ${origin}`);
+}
+
+// Erases the message
+function eraseMessage(message, inChannel, origin) {
+  message.delete();
+  recordLog(`${strConsole.eraseMesagge} ${message} from ${inChannel} ${origin}`);
 }
 
 
@@ -61,7 +69,7 @@ function splitMessageToParameters(message) {
 // Checks if the user is a moderator
 function authorIsMod(message) {
   const authorRoles = message.member.roles;
-  return authorRoles.find(role => role.name === roleName.moderator2) != null;
+  return authorRoles.find(role => role.name === strRole.moderator2) != null;
 }
 
 // Checks that the parameters from clearMessages are correct
@@ -73,66 +81,47 @@ function clearWrongRange(parameters) {
 
 // Checks if the bot can send a message to the channel
 function noChatChannel(message) {
-  return message.channel.name === strings.channelFunction.rolAnnouncements
-  || message.channel.name === strings.channelFunction.rolMastersChannel;
+  return message.channel.name === strFunction.rolAnnouncements
+  || message.channel.name === strFunction.rolMastersChannel;
+}
+
+// Check if the channel needs a template
+function channelNeedsTemplate(channel) {
+  return channel.name === strFunction.rolMastersChannel
+  || channel.name === strFunction.rolAnnouncements;
+}
+
+// Check if the message has a template
+function templateInMessage(message) {
+  return message.content.startsWith(strTemplate.startTemplate)
+  && message.content.endsWith(strTemplate.endTemplate);
+}
+
+// Find a channel
+function findChannel(guild, channelToFind) {
+  return guild.channels.find(ch => ch.name === channelToFind);
 }
 
 
 // Level 3 functions, executes the principal function
 
 
-// Registers the bot's login
-function login(client) {
-  const loginLog = `${log.login} ${client.user.tag}`;
-  recordLog(loginLog);
-}
-
-// Sends a welcome message to the new user
-function sendWelcomeMessage(receiver) {
-  sendDM(receiver, botResponse.newMember, strOrigin.welcome);
-}
-
-// Checks if the author has the default avatar and, if its the case, warns him
-function hasTheAuthorTheDefaultAvatar(message) {
-  if (
-    message.author.displayAvatarURL === message.author.defaultAvatarURL
-    && !noChatChannel(message)
-  ) {
-    sendReply(message, botResponse.defaultAvatar, strOrigin.defaultAvatar);
-  }
-}
-
-// Gets X number of messages from a channel to erase them
+// Gets X number of messages from a channel to erase them (command)
 function clearMessages(message) {
   const msgChannel = message.channel;
   if (authorIsMod(message)) {
     const parameters = splitMessageToParameters(message);
     if (clearWrongRange(parameters)) {
-      sendMessageToChannel(msgChannel, botResponse.clearRange, strOrigin.clear);
+      sendMessageToChannel(msgChannel, strResponse.clearRange, strOrigin.clear);
     } else {
       msgChannel.fetchMessages({ limit: parameters[1] }).then((toErase) => {
-        eraseMessage(message, toErase, strOrigin.clear);
+        eraseMessages(message, toErase, strOrigin.clear);
       });
     }
   }
 }
 
-// Sends the list of first users that joined the server
-function firstUsers(message) {
-  message.guild.fetchMembers().then((guild) => {
-    let userlist = botResponse.userListHeader;
-    const guildList = guild.members.array()
-      .sort((user1, user2) => user1.joinedTimestamp - user2.joinedTimestamp);
-    for (let i = 0; i < value.userListMax && i < guildList.length; i += 1) {
-      const index = i.toString().padStart(2, ' ');
-      userlist += `${index} - ${guildList[i].user.tag}\n`;
-    }
-    userlist += botResponse.userListTail;
-    sendDM(message.member, userlist, strOrigin.firstUsers);
-  });
-}
-
-// Sends the number of users without avatar
+// Sends the number of users without avatar (command)
 function usersWithoutAvatar(message) {
   if (authorIsMod(message)) {
     message.guild.fetchMembers().then((guild) => {
@@ -147,6 +136,76 @@ function usersWithoutAvatar(message) {
   }
 }
 
+// Registers the bot's login (invoked)
+function login(client) {
+  const loginLog = `${strConsole.login} ${client.user.tag}`;
+  recordLog(loginLog);
+}
+
+// Sends a welcome message to the new user (invoked)
+function sendWelcomeMessage(receiver) {
+  sendDM(receiver, strResponse.newMember, strOrigin.welcome);
+}
+
+// Checks if the author has the default avatar and to warn him (invoked)
+function hasTheAuthorTheDefaultAvatar(message) {
+  if (
+    message.author.displayAvatarURL === message.author.defaultAvatarURL
+    && !noChatChannel(message)
+  ) {
+    sendReply(message, strResponse.defaultAvatar, strOrigin.defaultAvatar);
+  }
+}
+
+// Sends the list of first users that joined the server (command)
+function firstUsers(message) {
+  message.guild.fetchMembers().then((guild) => {
+    let userlist = strResponse.userListHeader;
+    const guildList = guild.members.array()
+      .sort((user1, user2) => user1.joinedTimestamp - user2.joinedTimestamp);
+    for (let i = 0; i < strValue.userListMax && i < guildList.length; i += 1) {
+      const index = i.toString().padStart(2, ' ');
+      userlist += `${index} - ${guildList[i].user.tag}\n`;
+    }
+    userlist += strResponse.userListTail;
+    sendDM(message.member, userlist, strOrigin.firstUsers);
+  });
+}
+
+// Checks if the message needs a template (invoke)
+function messageNeedsTemplate(message) {
+  if (channelNeedsTemplate(message.channel) && !templateInMessage(message)) {
+    const reply = `${message.author} ${strResponse.wrongTemplate}`;
+    const channel = findChannel(message.guild, strFunction.rolConversation);
+    sendMessageToChannel(channel, reply, strOrigin.wrongTemplate);
+    if (message.channel.name === strFunction.rolMastersChannel) {
+      sendDM(message.author, strResponse.rolMasterTemplate, strOrigin.wrongTemplate);
+    }
+    if (message.channel.name === strFunction.rolAnnouncements) {
+      sendDM(message.author, strResponse.rolAnnounceTemplate, strOrigin.wrongTemplate);
+    }
+    eraseMessage(message, message.channel.name, strOrigin.wrongTemplate);
+  }
+}
+
+// Starts the process to register a warning
+function registerWarning(message) {
+  if (authorIsMod(message)) {
+    const parameters = splitMessageToParameters(message);
+    const moderator = message.author;
+    const member = message.mentions.members.first();
+    const indexDays = parameters.indexOf(strValue.warningDays);
+    const indexCause = parameters.indexOf(strValue.warningCause);
+    const indexChannel = parameters.indexOf(strValue.warningChannel);
+
+    console.log(`${moderator.tag}`);
+    console.log(`${member.user.tag}`);
+    console.log(`${parameters[indexDays - 1]}`);
+    console.log(`${parameters[indexCause + 1]}`);
+    console.log(`${parameters[indexChannel + 1]}`);
+  }
+}
+
 
 // Level 4 functions,
 
@@ -157,37 +216,38 @@ function isTheMessageACommand(message) {
     clearMessages(message);
   }
   if (message.content.toLowerCase().startsWith('!patrulla')) {
-    console.log('patrulla');
+    registerWarning(message);
   }
   if (message.content.toLowerCase().startsWith('!theelders')) {
     firstUsers(message);
   }
-  if (message.channel.name === 'anuncios_de_partidas') {
-    console.log('anuncios');
-  }
   if (message.content.toLowerCase().startsWith('!noavatar')) {
     usersWithoutAvatar(message);
-  }
-  if (message.channel.name === strings.channelFunction.rolMastersChannel) {
-    console.log('master');
   }
 }
 
 
 module.exports = {
-  recordLog,
-  sendDM,
-  sendMessageToChannel,
-  sendReply,
-  eraseMessage, // 2
+  recordLog, // 1
+  sendDM, // 1
+  sendMessageToChannel, // 1
+  sendReply, // 1
+  eraseMessages, // 1
+  eraseMessage, // 1
   splitMessageToParameters, // 2
   authorIsMod, // 2
   clearWrongRange, // 2
+  noChatChannel,
+  channelNeedsTemplate, // 2
+  templateInMessage, // 2
+  findChannel, // 2
   login, // 3
   sendWelcomeMessage, // 3
   hasTheAuthorTheDefaultAvatar, // 3
   clearMessages, // 3
   firstUsers, // 3
   usersWithoutAvatar, // 3
-  isTheMessageACommand,
+  registerWarning,
+  messageNeedsTemplate, // 3
+  isTheMessageACommand, // 4
 };
