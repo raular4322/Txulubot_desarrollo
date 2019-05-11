@@ -600,3 +600,32 @@ Sat May 11 2019 22:48:46 GMT+0200 (GMT+02:00): Direct message send to undefined 
 Sat May 11 2019 22:51:20 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
 Sat May 11 2019 22:51:23 GMT+0200 (GMT+02:00): Message to patata Warning 
 Sat May 11 2019 22:51:29 GMT+0200 (GMT+02:00): Message to patata Warning 
+Sat May 11 2019 23:24:44 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sat May 11 2019 23:25:59 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sat May 11 2019 23:25:59 GMT+0200 (GMT+02:00): Reply to Joakin#1997 Reply in gente_nueva - Default avatar 
+Sat May 11 2019 23:26:42 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sat May 11 2019 23:59:08 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sat May 11 2019 23:59:09 GMT+0200 (GMT+02:00): Reply to jorgex#1868 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 00:10:47 GMT+0200 (GMT+02:00): Reply to jorgex#1868 Reply in lynx_archive - Default avatar 
+Sun May 12 2019 00:11:08 GMT+0200 (GMT+02:00): Reply to jorgex#1868 Reply in lynx_archive - Default avatar 
+Sun May 12 2019 00:13:50 GMT+0200 (GMT+02:00): Reply to raular4321#7917 Reply in bot_de_discord__sugerencias_y_test - Default avatar 
+Sun May 12 2019 00:16:19 GMT+0200 (GMT+02:00): !clear 3 by raular4322#2690 - Clear message 
+Sun May 12 2019 00:18:23 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 00:18:25 GMT+0200 (GMT+02:00): Message to patata Warning 
+Sun May 12 2019 00:18:38 GMT+0200 (GMT+02:00): Message to patata Warning 
+Sun May 12 2019 00:21:36 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 00:22:58 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 00:23:13 GMT+0200 (GMT+02:00): Message to patata Warning 
+Sun May 12 2019 00:23:36 GMT+0200 (GMT+02:00): Reply to raular4321#7917 Reply in bot_de_discord__sugerencias_y_test - Default avatar 
+Sun May 12 2019 00:24:40 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 00:26:11 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 00:29:02 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 00:29:06 GMT+0200 (GMT+02:00): Reply to raular4321#7917 Reply in bot_de_discord__sugerencias_y_test - Default avatar 
+Sun May 12 2019 00:29:20 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 00:29:58 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 00:29:59 GMT+0200 (GMT+02:00): Reply to raular4321#7917 Reply in bot_de_discord__sugerencias_y_test - Default avatar 
+Sun May 12 2019 00:33:16 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 00:33:18 GMT+0200 (GMT+02:00): Message to patata Warning 
+Sun May 12 2019 00:34:20 GMT+0200 (GMT+02:00): Message to patata Warning 
+Sun May 12 2019 00:36:50 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 00:36:50 GMT+0200 (GMT+02:00): Reply to Isavelino#8090 Reply in gente_nueva - Default avatar 

@@ -183,7 +183,7 @@ function hasTheAuthorTheDefaultAvatar(message) {
     && !noChatChannel(message)
   ) {
     const channel = findChannel(message.guild, strFunction.rulesChannel);
-    const response = `${strResponse.defaultAvatar} #${channel.id}`;
+    const response = `${strResponse.defaultAvatar} ${channel}`;
     sendReply(message, response, strOrigin.defaultAvatar);
   }
 }
@@ -247,7 +247,7 @@ function registerWarning(message) {
     );
 
     console.log(`${moderator.tag}`);
-    console.log(`${member.user.tag}`);
+    console.log(`${member}`);
     console.log(`${parameters[indexDays - 1]}`);
     console.log(`${parameters[indexCause + 1]}`);
     console.log(`${parameters[indexChannel + 1]}`);
