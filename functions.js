@@ -244,11 +244,10 @@ function isTheMessageACommand(message) {
   }
 }
 
-//RAINBOOOOW
-function changeRainbowRoleColor(role){
-  role.setColor('#' + Math.floor(Math.random()*16777215).toString(16));
+// RAINBOOOOW
+function changeRainbowRoleColor(role) {
+  role.setColor(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
 }
-
 
 
 module.exports = {
@@ -275,5 +274,5 @@ module.exports = {
   registerWarning,
   messageNeedsTemplate, // 3
   isTheMessageACommand, // 4
-  // changeRainbowRoleColor,
+  changeRainbowRoleColor,
 };
