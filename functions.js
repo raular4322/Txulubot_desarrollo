@@ -102,6 +102,10 @@ function findChannel(guild, channelToFind) {
   return guild.channels.find(ch => ch.name === channelToFind);
 }
 
+// Concatenate string variables
+function concatenateVariables(var1, var2, var3, var4, var5, var6, var7, var8) {
+  return `${var1} ${var2} ${var3} ${var4} ${var5} ${var6} ${var7} ${var8}`;
+}
 
 // Level 3 functions, executes the principal function
 
@@ -197,12 +201,17 @@ function registerWarning(message) {
     const indexDays = parameters.indexOf(strValue.warningDays);
     const indexCause = parameters.indexOf(strValue.warningCause);
     const indexChannel = parameters.indexOf(strValue.warningChannel);
-    const messageToMods = `${member.user.tag} ${strResponse.warningMessage} ${parameters[indexCause + 1]}`;
+
     sendMessageToChannel(
       findChannel(strFunction.moderationChannel),
-      messageToMods,
+      concatenateVariables(
+        member.user.tag,
+        strResponse.warningMessage,
+        parameters[indexCause + 1]
+      ),
       strOrigin.warning,
     );
+
     console.log(`${moderator.tag}`);
     console.log(`${member.user.tag}`);
     console.log(`${parameters[indexDays - 1]}`);
@@ -221,9 +230,9 @@ function isTheMessageACommand(message) {
     clearMessages(message);
   }
   // Function in progress
-  // if (message.content.toLowerCase().startsWith('!patrulla')) {
-  // registerWarning(message);
-  // }
+  if (message.content.toLowerCase().startsWith('!patrulla')) {
+    registerWarning(message);
+  }
   if (message.content.toLowerCase().startsWith('!theelders')) {
     firstUsers(message);
   }
@@ -247,6 +256,7 @@ module.exports = {
   channelNeedsTemplate, // 2
   templateInMessage, // 2
   findChannel, // 2
+  concatenateVariables,
   login, // 3
   sendWelcomeMessage, // 3
   hasTheAuthorTheDefaultAvatar, // 3
