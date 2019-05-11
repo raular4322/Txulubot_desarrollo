@@ -242,8 +242,8 @@ function isTheMessageACommand(message) {
 }
 
 //RAINBOOOOW
-function changeRainbowRoleColor(){
-  strRole.rainbowRole.setColor('#' + Math.floor(Math.random()*16777215).toString(16));
+function changeRainbowRoleColor(role){
+  role.setColor('#' + Math.floor(Math.random()*16777215).toString(16));
 }
 
 
