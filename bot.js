@@ -9,10 +9,10 @@ client.login(auth.token);
 
 client.on('ready', () => {
   functions.login(client);
-  const rainbowRole = client.guilds.find(server => server.name === 'Lynx Reviewer').roles.find(role => role.name === 'rainbowRole');
-  setInterval(() => {
-    functions.changeRainbowRoleColor(rainbowRole);
-  });
+  // const rainbowRole = client.guilds.find(server => server.name === 'Lynx Reviewer').roles.find(role => role.name === 'rainbowRole');
+  // setInterval(() => {
+  //  functions.changeRainbowRoleColor(rainbowRole);
+  // });
 });
 
 client.on('message', (msg) => {
