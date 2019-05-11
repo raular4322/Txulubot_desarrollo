@@ -104,7 +104,32 @@ function findChannel(guild, channelToFind) {
 
 // Concatenate string variables
 function concatenate(var1, var2, var3, var4, var5, var6, var7, var8, var9) {
-  return concatenate(var1, var2, var3, var4, var5, var6, var7, var8, var9);
+  let response = `${var1}`;
+  if (var2 !== undefined) {
+    response += ` ${var2}`;
+  }
+  if (var3 !== undefined) {
+    response += ` ${var3}`;
+  }
+  if (var4 !== undefined) {
+    response += ` ${var4}`;
+  }
+  if (var5 !== undefined) {
+    response += ` ${var5}`;
+  }
+  if (var6 !== undefined) {
+    response += ` ${var6}`;
+  }
+  if (var7 !== undefined) {
+    response += ` ${var7}`;
+  }
+  if (var8 !== undefined) {
+    response += ` ${var8}`;
+  }
+  if (var9 !== undefined) {
+    response += ` ${var9}`;
+  }
+  return response;
 }
 
 // Level 3 functions, executes the principal function
