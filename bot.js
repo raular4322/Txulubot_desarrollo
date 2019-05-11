@@ -9,7 +9,7 @@ client.login(auth.token);
 
 client.on('ready', () => {
   functions.login(client);
-  setInterval(functions.changeRainbowRoleColor(),50);
+  // setInterval(functions.changeRainbowRoleColor(),50);
 });
 
 client.on('message', (msg) => {

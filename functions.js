@@ -157,7 +157,8 @@ function hasTheAuthorTheDefaultAvatar(message) {
     message.author.displayAvatarURL === message.author.defaultAvatarURL
     && !noChatChannel(message)
   ) {
-    const response = `${strResponse.defaultAvatar} #${strFunction.rulesChannel}`
+    const channel = findChannel(message.guild, strFunction.rulesChannel);
+    const response = `${strResponse.defaultAvatar} #${channel.id}`;
     sendReply(message, response, strOrigin.defaultAvatar);
   }
 }
@@ -194,7 +195,7 @@ function messageNeedsTemplate(message) {
 }
 
 // WIP
-// Starts the process to register a warning WIP
+// Starts the process to register a warning
 function registerWarning(message) {
   if (authorIsMod(message)) {
     const parameters = splitMessageToParameters(message);
@@ -205,11 +206,11 @@ function registerWarning(message) {
     const indexChannel = parameters.indexOf(strValue.warningChannel);
 
     sendMessageToChannel(
-      findChannel(strFunction.moderationChannel),
+      findChannel(message.guild, strFunction.moderationChannel),
       concatenateVariables(
         member.user.tag,
         strResponse.warningMessage,
-        parameters[indexCause + 1]
+        parameters[indexCause + 1],
       ),
       strOrigin.warning,
     );
@@ -243,10 +244,10 @@ function isTheMessageACommand(message) {
   }
 }
 
-//RAINBOOOOW
-function changeRainbowRoleColor(){
-  strRole.rainbowRole.setColor('#' + Math.floor(Math.random()*16777215).toString(16));
-}
+// RAINBOOOOW
+// function changeRainbowRoleColor() {
+//  strRole.rainbowRole.setColor('#' + Math.floor(Math.random()*16777215).toString(16));
+// }
 
 
 module.exports = {
@@ -273,5 +274,5 @@ module.exports = {
   registerWarning,
   messageNeedsTemplate, // 3
   isTheMessageACommand, // 4
-  changeRainbowRoleColor, // 4
+  // changeRainbowRoleColor,
 };
