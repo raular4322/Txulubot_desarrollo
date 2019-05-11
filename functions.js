@@ -157,7 +157,9 @@ function hasTheAuthorTheDefaultAvatar(message) {
     message.author.displayAvatarURL === message.author.defaultAvatarURL
     && !noChatChannel(message)
   ) {
-    sendReply(message, strResponse.defaultAvatar, strOrigin.defaultAvatar);
+    const channel = findChannel(message.guild, strFunction.rulesChannel);
+    const response = `${strResponse.defaultAvatar} #${channel.id}`;
+    sendReply(message, response, strOrigin.defaultAvatar);
   }
 }
 
@@ -192,6 +194,7 @@ function messageNeedsTemplate(message) {
   }
 }
 
+// WIP
 // Starts the process to register a warning
 function registerWarning(message) {
   if (authorIsMod(message)) {
@@ -203,11 +206,11 @@ function registerWarning(message) {
     const indexChannel = parameters.indexOf(strValue.warningChannel);
 
     sendMessageToChannel(
-      findChannel(strFunction.moderationChannel),
+      findChannel(message.guild, strFunction.moderationChannel),
       concatenateVariables(
         member.user.tag,
         strResponse.warningMessage,
-        parameters[indexCause + 1]
+        parameters[indexCause + 1],
       ),
       strOrigin.warning,
     );
@@ -229,15 +232,15 @@ function isTheMessageACommand(message) {
   if (message.content.toLowerCase().startsWith('!clear')) {
     clearMessages(message);
   }
-  // Function in progress
-  if (message.content.toLowerCase().startsWith('!patrulla')) {
-    registerWarning(message);
-  }
   if (message.content.toLowerCase().startsWith('!theelders')) {
     firstUsers(message);
   }
   if (message.content.toLowerCase().startsWith('!noavatar')) {
     usersWithoutAvatar(message);
+  }
+  // WIP
+  if (message.content.toLowerCase().startsWith('!patrulla')) {
+    registerWarning(message);
   }
 }
 
@@ -245,6 +248,7 @@ function isTheMessageACommand(message) {
 function changeRainbowRoleColor(role){
   role.setColor('#' + Math.floor(Math.random()*16777215).toString(16));
 }
+
 
 
 module.exports = {
@@ -271,5 +275,5 @@ module.exports = {
   registerWarning,
   messageNeedsTemplate, // 3
   isTheMessageACommand, // 4
-  changeRainbowRoleColor, // 4
+  // changeRainbowRoleColor,
 };
