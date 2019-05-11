@@ -157,7 +157,8 @@ function hasTheAuthorTheDefaultAvatar(message) {
     message.author.displayAvatarURL === message.author.defaultAvatarURL
     && !noChatChannel(message)
   ) {
-    sendReply(message, strResponse.defaultAvatar, strOrigin.defaultAvatar);
+    const response = `${strResponse.defaultAvatar} #${strFunction.rulesChannel}`
+    sendReply(message, response, strOrigin.defaultAvatar);
   }
 }
 
@@ -192,7 +193,8 @@ function messageNeedsTemplate(message) {
   }
 }
 
-// Starts the process to register a warning
+// WIP
+// Starts the process to register a warning WIP
 function registerWarning(message) {
   if (authorIsMod(message)) {
     const parameters = splitMessageToParameters(message);
@@ -229,15 +231,15 @@ function isTheMessageACommand(message) {
   if (message.content.toLowerCase().startsWith('!clear')) {
     clearMessages(message);
   }
-  // Function in progress
-  if (message.content.toLowerCase().startsWith('!patrulla')) {
-    registerWarning(message);
-  }
   if (message.content.toLowerCase().startsWith('!theelders')) {
     firstUsers(message);
   }
   if (message.content.toLowerCase().startsWith('!noavatar')) {
     usersWithoutAvatar(message);
+  }
+  // WIP
+  if (message.content.toLowerCase().startsWith('!patrulla')) {
+    registerWarning(message);
   }
 }
 

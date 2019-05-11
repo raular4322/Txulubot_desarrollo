@@ -528,3 +528,5 @@ Fri May 10 2019 11:43:26 GMT+0200 (GMT+02:00): Direct message send to undefined 
 Fri May 10 2019 12:05:35 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
 Fri May 10 2019 19:42:06 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
 Fri May 10 2019 19:45:38 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sat May 11 2019 19:41:07 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sat May 11 2019 19:41:17 GMT+0200 (GMT+02:00): Reply to raular4321#7917 Reply in bot_de_discord__sugerencias_y_test - Default avatar 
