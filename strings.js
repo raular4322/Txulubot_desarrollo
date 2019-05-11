@@ -73,6 +73,7 @@ const roles = {
   addedBotRol: 'UB3R-B0T',
   unkownFuction1: 'Bot Admin',
   unkownFuction2: 'Bot Mod',
+  rainbowRole: 'rainbowRole'
 };
 
 const commands = {
