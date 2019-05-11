@@ -103,8 +103,8 @@ function findChannel(guild, channelToFind) {
 }
 
 // Concatenate string variables
-function concatenateVariables(var1, var2, var3, var4, var5, var6, var7, var8) {
-  return `${var1} ${var2} ${var3} ${var4} ${var5} ${var6} ${var7} ${var8}`;
+function concatenate(var1, var2, var3, var4, var5, var6, var7, var8, var9) {
+  return concatenate(var1, var2, var3, var4, var5, var6, var7, var8, var9);
 }
 
 // Level 3 functions, executes the principal function
@@ -206,11 +206,17 @@ function registerWarning(message) {
     const indexChannel = parameters.indexOf(strValue.warningChannel);
 
     sendMessageToChannel(
-      findChannel(message.guild, strFunction.moderationChannel),
-      concatenateVariables(
-        member.user.tag,
+      findChannel(message.guild, strFunction.testChannel1),
+      concatenate(
+        member,
         strResponse.warningMessage,
         parameters[indexCause + 1],
+        strValue.warningChannel,
+        parameters[indexChannel + 1],
+        parameters[indexDays - 1],
+        strValue.warningDays,
+        strValue.warningCause,
+        moderator,
       ),
       strOrigin.warning,
     );
@@ -247,6 +253,8 @@ function isTheMessageACommand(message) {
 // RAINBOOOOW
 function changeRainbowRoleColor(role) {
   role.setColor(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
+  // console.log(role.hexColor);
+  // console.log(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
 }
 
 
@@ -264,7 +272,7 @@ module.exports = {
   channelNeedsTemplate, // 2
   templateInMessage, // 2
   findChannel, // 2
-  concatenateVariables,
+  concatenate,
   login, // 3
   sendWelcomeMessage, // 3
   hasTheAuthorTheDefaultAvatar, // 3

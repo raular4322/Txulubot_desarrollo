@@ -6,7 +6,7 @@ Este bot está destinado a su uso en el canal de Discord de Lynx Reviewer, sin e
 
 -Mensaje de bienvenida por MD a todos los usuarios que entran al server por primera vez. Se notifica por consola y por el canal de bienvenidas de Discord que se tenga cuando se ha tratado de enviar el mensaje.
 
--!Patrulla {@usuario} {nº de dias}, pone un rol de aviso a usuarios que rompan las normas.
+-!Patrulla a {@usuario} {nº de dias} dias por {motivo del castigo} en {canal donde se ha cometido la falta}, pone un rol de aviso a usuarios que rompan las normas.
 
 -!TheElders, envia por MD una lista de los primeros 52 usuarios en unirse al servidor.
 
