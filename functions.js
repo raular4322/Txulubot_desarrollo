@@ -246,11 +246,7 @@ function registerWarning(message) {
       strOrigin.warning,
     );
 
-    console.log(`${moderator.tag}`);
-    console.log(`${member}`);
-    console.log(`${parameters[indexDays - 1]}`);
-    console.log(`${parameters[indexCause + 1]}`);
-    console.log(`${parameters[indexChannel + 1]}`);
+    console.log();
   }
 }
 
@@ -273,13 +269,6 @@ function isTheMessageACommand(message) {
   if (message.content.toLowerCase().startsWith('!patrulla')) {
     registerWarning(message);
   }
-}
-
-// RAINBOOOOW
-function changeRainbowRoleColor(role) {
-  role.setColor(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
-  // console.log(role.hexColor);
-  // console.log(`#${Math.floor(Math.random() * 16777215).toString(16)}`);
 }
 
 
@@ -307,5 +296,4 @@ module.exports = {
   registerWarning,
   messageNeedsTemplate, // 3
   isTheMessageACommand, // 4
-  changeRainbowRoleColor,
 };

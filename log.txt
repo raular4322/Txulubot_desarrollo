@@ -629,3 +629,92 @@ Sun May 12 2019 00:33:18 GMT+0200 (GMT+02:00): Message to patata Warning
 Sun May 12 2019 00:34:20 GMT+0200 (GMT+02:00): Message to patata Warning 
 Sun May 12 2019 00:36:50 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
 Sun May 12 2019 00:36:50 GMT+0200 (GMT+02:00): Reply to Isavelino#8090 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 01:09:52 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 01:09:54 GMT+0200 (GMT+02:00): Reply to raular4321#7917 Reply in bot_de_discord__sugerencias_y_test - Default avatar 
+Sun May 12 2019 01:48:38 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 01:48:38 GMT+0200 (GMT+02:00): Reply to ViciousRoark#3599 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 01:56:26 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 01:56:26 GMT+0200 (GMT+02:00): Reply to Eienpcs#4423 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 02:53:02 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 02:53:02 GMT+0200 (GMT+02:00): Reply to palalimon#9942 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 03:00:24 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 03:59:48 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 04:17:41 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 05:26:42 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 05:43:29 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 05:47:33 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 06:18:22 GMT+0200 (GMT+02:00): Message to conversación_sobre_rol - wrong or no template 
+Sun May 12 2019 06:18:22 GMT+0200 (GMT+02:00): Direct message send to tavocu#5185 - wrong or no template 
+Sun May 12 2019 06:18:22 GMT+0200 (GMT+02:00): undefined **//inicio**
+*ISLAS*
+System: Anima
+Master: <@387043840554434572> 
+Rating: [3/3/3] (todo será válido)
+Date: sin especificar
+Time: sin especificar
+
+Premisa: Bienvenidos a Uroboros, el mayor gremio de aventureros en todo Avalon, nos encargamos de proteger la seguridad de los ciudadanos.
+Queridos aventureros, si quieren ayudar a las personas, demostrar sus habilidades, ganar algo de dinero, o solo conocer gente, este es el lugar indicado.
+Cada día nos llegan todo tipo de misiones, encontrarás alguna a tu medida?...
+
+Players: [7/20]
+Notas:
+la partida aún necesita mucha preparación por delante, pero con esta publicación me comprometo a ponerla en pie
+las partidas se compondrán de un sistema de misiones, siendo a una misión por sesión
+podrán unirse una cantidad considerable de jugadores, pero cada sesión constará de 3 a 5 jugadores; los jugadores no necesitan ser constantes, siempre podrán ir jugadores distintos a cada misión
+esta es literalmente mi primera vez como master, así que habrán muchos posibles errores por mi parte, les pido que me tengan paciencia
+||he agregado a anima la mecánica de mascotas||
+**final//** from anuncios_de_partidas - wrong or no template 
+Sun May 12 2019 06:39:56 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 06:39:56 GMT+0200 (GMT+02:00): Reply to tudil#4362 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 06:45:49 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 06:45:49 GMT+0200 (GMT+02:00): Reply to Kasu#9365 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 06:52:02 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 06:52:02 GMT+0200 (GMT+02:00): Reply to davidcdorbecker#1904 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 07:02:51 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 07:08:03 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 07:54:54 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 07:55:51 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 07:55:51 GMT+0200 (GMT+02:00): Reply to carvinal#9940 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 07:59:37 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 08:53:25 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 08:53:25 GMT+0200 (GMT+02:00): Reply to NeroGalastise#8554 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 09:47:55 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 10:12:06 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 10:12:06 GMT+0200 (GMT+02:00): Reply to aaronzen#2062 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 10:15:49 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 10:28:07 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 10:44:50 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 10:44:50 GMT+0200 (GMT+02:00): Reply to Elfomask#8312 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 10:45:30 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 11:20:46 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 11:20:46 GMT+0200 (GMT+02:00): Reply to Machiega#1283 Reply in gente_nueva - Default avatar 
+Sun May 12 2019 11:31:58 GMT+0200 (GMT+02:00): Direct message send to undefined - Welcome message 
+Sun May 12 2019 12:08:50 GMT+0200 (GMT+02:00): Message to conversación_sobre_rol - wrong or no template 
+Sun May 12 2019 12:08:50 GMT+0200 (GMT+02:00): Direct message send to Dennettlander#4670 - wrong or no template 
+Sun May 12 2019 12:08:50 GMT+0200 (GMT+02:00): undefined //Inicio from anuncios_de_partidas - wrong or no template 
+Sun May 12 2019 12:50:32 GMT+0200 (GMT+02:00): Direct message send to Arilantia#2905 - wrong or no template 
+Sun May 12 2019 12:50:32 GMT+0200 (GMT+02:00): undefined //**INICIO**
+
+CHELIAX, CHELIAX ÜBER ALLES!
+
+**Sistema:** D&D 5e
+**Escenario de campaña: Golarion Steampunk
+**Master:** Morgana Aránzazu (<@!215856949617491968>)
+**Ratio:** 3/3/3 [*Lenguaje* / *Violencia* / *Sexualidad*] (Del 0 al 3, siendo 0 nada y 3 explícito)
+**Día:** 18/05/2019
+**Hora:** 18:30 [GMT+1] España (*PENÍNSULA*) [La duración de la partida serán de 2 a 3 horas)
+**Premisa:** Cheliax, patria que un día fue gloriosa, que un día cayó en desgracia y fue consumida por sus prácticas diabolistas. Pero ahora... ahora... Cheliax quiere recuperar lo que es suyo, Avistan, no... el Mar Interior, regidos por las bendiciones del todopoderoso Asmodeo, una vez más, Cheliax se dispone a tomar las riendas. Pero eso no es lo importante, ¿verdad? Tú, sí, tú... ¿cantarás al son de Abrogail II? Nuestra reina... nuestra mesías, aquella que nos llevará a más allá de la mortalidad o... ¿prefieres detener lo inevitable? Unirte a la resistencia, ser parte de un grupo que prefiere luchar a ver un mundo gobernado por demonios... ¡¡DECIDE COMO MORIRÁS, ALZANDO LA BANDERA ROJINEGRA O QUEMÁNDOLA!!
+**Jugadores** [0/4] (Puedo añadir un 5º, pero no más)
+**Notas:** La ambientación de Pathfinder la he puesto en D&D5e pues es un sistema más amable con los novatos, los prerrequisitos son **1: Haberse leído PHB**  y **2: Saber cómo hacer una ficha**. El rumbo de la partida será NARRATIVO y DRAMÁTICO, no estará basado en el combate, y si hay sesiones con alto contenido en combate será como herramienta para narrar. Esto será contar la historia de la partida, pero sobre todo vuestra historia. **La partida empezará con un "Episodio Piloto"**
+**FINAL**// from anuncios_de_partidas - wrong or no template 
+Sun May 12 2019 12:50:32 GMT+0200 (GMT+02:00): Message to conversación_sobre_rol - wrong or no template 
+Sun May 12 2019 12:50:33 GMT+0200 (GMT+02:00): DiscordAPIError: Cannot send messages to this user 
+Sun May 12 2019 13:14:37 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 13:17:38 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 13:18:53 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 13:54:20 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 13:55:02 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 15:44:01 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 15:44:38 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
+Sun May 12 2019 15:45:10 GMT+0200 (GMT+02:00): Logged as Txulubot#4769 
