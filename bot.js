@@ -11,6 +11,10 @@ client.on('ready', () => {
   functions.login(client);
 });
 
+client.on('rateLimit', (rateLimit) => {
+  console.log(rateLimit);
+});
+
 client.on('message', (msg) => {
   functions.isTheMessageACommand(msg);
 

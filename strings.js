@@ -74,6 +74,7 @@ const roles = {
   unkownFuction1: 'Bot Admin',
   unkownFuction2: 'Bot Mod',
   rainbowRole: 'rainbowRole',
+  mark: 'holiwis',
 };
 
 const commands = {

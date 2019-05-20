@@ -10,6 +10,7 @@ const strValue = strings.values;
 const strFunction = strings.channelFunction;
 const strTemplate = strings.templates;
 
+
 // Level 1 functions, they are the base of all commands
 
 
@@ -79,12 +80,6 @@ function clearWrongRange(parameters) {
   || parameters[1] <= 0;
 }
 
-// Checks if the bot can send a message to the channel
-function noChatChannel(message) {
-  return message.channel.name === strFunction.rolAnnouncements
-  || message.channel.name === strFunction.rolMastersChannel;
-}
-
 // Check if the channel needs a template
 function channelNeedsTemplate(channel) {
   return channel.name === strFunction.rolMastersChannel
@@ -100,6 +95,11 @@ function templateInMessage(message) {
 // Find a channel
 function findChannel(guild, channelToFind) {
   return guild.channels.find(ch => ch.name === channelToFind);
+}
+
+// Find a role
+function findRole(server) {
+  return server.roles.find(role => role.name === strRole.rainbowRole);
 }
 
 // Concatenate string variables
@@ -132,6 +132,13 @@ function concatenate(var1, var2, var3, var4, var5, var6, var7, var8, var9) {
   return response;
 }
 
+// Checks if the bot can send a message to the channel
+function noChatChannel(message) {
+  return message.channel.name === strFunction.rolAnnouncements
+  || message.channel.name === strFunction.rolMastersChannel;
+}
+
+
 // Level 3 functions, executes the principal function
 
 
@@ -147,21 +154,6 @@ function clearMessages(message) {
         eraseMessages(message, toErase, strOrigin.clear);
       });
     }
-  }
-}
-
-// Sends the number of users without avatar (command)
-function usersWithoutAvatar(message) {
-  if (authorIsMod(message)) {
-    message.guild.fetchMembers().then((guild) => {
-      let counter = 0;
-      guild.members.array().forEach((member) => {
-        if (member.user.displayAvatarURL === member.user.defaultAvatarURL) {
-          counter += 1;
-        }
-      });
-      sendDM(message.member, counter, strOrigin.noAvatarUsers);
-    });
   }
 }
 
@@ -220,6 +212,32 @@ function messageNeedsTemplate(message) {
 }
 
 // WIP
+
+// Start a 10 second wait
+function delay() {
+  return new Promise(resolve => setTimeout(resolve, 10000));
+}
+
+// Sends the number of users without avatar and kicks them (command)
+function usersWithoutAvatar(message) {
+  if (authorIsMod(message)) {
+    message.guild.fetchMembers().then(async (guild) => {
+      let counter = 0;
+      const memberArray = guild.members.array();
+      for (let i = 0; i < memberArray.length; i += 1) {
+        if (memberArray[i].user.displayAvatarURL === memberArray[i].user.defaultAvatarURL) {
+          /* eslint-disable no-await-in-loop */
+          await delay().then(console.log(memberArray[i]));
+          await memberArray[i].kick()
+            .then(console.log(`${counter} done`))
+            .catch(err => console.log(err));
+          counter += 1;
+        }
+      }
+      sendDM(message.member, counter, strOrigin.noAvatarUsers);
+    });
+  }
+}
 // Starts the process to register a warning
 function registerWarning(message) {
   if (authorIsMod(message)) {
@@ -245,7 +263,7 @@ function registerWarning(message) {
       ),
       strOrigin.warning,
     );
-
+    message.member.addRole(findRole(message.guild));
     console.log();
   }
 }
@@ -282,17 +300,19 @@ module.exports = {
   splitMessageToParameters, // 2
   authorIsMod, // 2
   clearWrongRange, // 2
-  noChatChannel,
   channelNeedsTemplate, // 2
   templateInMessage, // 2
   findChannel, // 2
+  findRole,
   concatenate,
+  noChatChannel,
   login, // 3
   sendWelcomeMessage, // 3
   hasTheAuthorTheDefaultAvatar, // 3
   clearMessages, // 3
   firstUsers, // 3
-  usersWithoutAvatar, // 3
+  delay,
+  usersWithoutAvatar,
   registerWarning,
   messageNeedsTemplate, // 3
   isTheMessageACommand, // 4
