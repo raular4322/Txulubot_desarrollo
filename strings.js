@@ -85,7 +85,7 @@ const commands = {
 
 const responses = {
   newMember: 'Bienvenido al servidor de Lynx Reviewer, aprovecha estos 10 minutos que tienes para leer el canal de leyes_y_normas, porque encontrarás información crucial para tu experiencia en el server. Dicho esto, ¡Gracias por venir y esperamos que te lo pases genial con nosotros!',
-  defaultAvatar: 'Lee las normas en',
+  defaultAvatar: 'Por favor, lee las normas en',
   clearRange: 'Especifica un numero entero mayor a 0 y menor a 100',
   userListHeader: '```-Lista de usuarios según su entrada al server-\n',
   userListTail: '```',
