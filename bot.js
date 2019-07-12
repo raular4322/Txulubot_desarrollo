@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
-// const auth = require('./auth.json');
+const auth = require('./auth.json');
 const functions = require('./functions');
 
 client.login(process.env.TOKEN);

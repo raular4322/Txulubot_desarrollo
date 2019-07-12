@@ -227,7 +227,7 @@ function usersWithoutAvatar(message) {
       for (let i = 0; i < memberArray.length; i += 1) {
         if (memberArray[i].user.displayAvatarURL === memberArray[i].user.defaultAvatarURL) {
           /* eslint-disable no-await-in-loop */
-          await delay().then(console.log(memberArray[i]));
+          await delay().then(console.log(memberArray[i].user.tag));
           await memberArray[i].kick()
             .then(console.log(`${counter} done`))
             .catch(err => console.log(err));
