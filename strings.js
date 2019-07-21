@@ -1,6 +1,7 @@
 const channelFunction = {
   serverName: 'Lynx Reviewer',
-  rulesChannel: 'leyes_y_normas',
+  rulesChannel: 'reglas_del_servidor',
+  guidesChannel: 'guias_del_servidor',
   moderationChannel: 'asientos_de_arena',
   newsChannel: 'anuncios_importantes',
   welcomeChannel: 'gente_nueva',
